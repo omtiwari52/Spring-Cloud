@@ -19,16 +19,38 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: USER-SERVICE
+                fallbackUri: forward:/userServiceFallback
+
         - id: contact-service
           uri: lb://CONTACT-SERVICE
           predicates:
             - Path=/contact/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: CONTACT-SERVICE
+                fallbackUri: forward:/contactServiceFallback
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillieseconds: 5000
+
+
+
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"  # To expose all Actuator endpoints (optional)
+        include: "*" # To expose all Actuator endpoints (optional)
   endpoint:
     gateway:
     enabled: true
