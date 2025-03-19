@@ -1,0 +1,41 @@
+Monolithic architecture - Entire application is build as a single, Unified unit.
+
+Characteristics:
+1. Single codebase
+2. Single Deployment unit
+3. Tightly coupled components
+4. Shared Memory & resources
+5. Simple development and Deployment
+
+
+Architecture
+my-app/
+│── src/
+│   ├── main/
+│   │   ├── java/com/example/
+│   │   │   ├── controller/   --> Handles HTTP Requests (REST APIs)
+│   │   │   ├── service/      --> Business Logic
+│   │   │   ├── repository/   --> Database Layer (JPA, Hibernate)
+│   │   │   ├── model/        --> Data Entities
+│   │   │   ├── MyApplication.java (Main Class)
+│   ├── resources/
+│   │   ├── application.properties (Configuration)
+│── pom.xml (Maven Dependencies)
+│── build.gradle (Gradle Dependencies)
+
+Advantages:
+1. Simple Development
+2. Easy Deployment
+3. Centralized Data Management 
+
+Disadvantages:
+1. Difficult to deploy big applications
+2. Scalability
+3. Tightly coupled Codebase - A small change in one module can impact the entire application
+4. Harder Maintenance
+5. Technology Lock_in - Difficult to introduce new changes without refactoring the whole application
+
+Use case:
+1. When want to develop small application
+2. For quick development and prototyping 
+3. When team us small

@@ -1,0 +1,46 @@
+Microservices Architecture
+
+It is a software design pattern that structures an application as a collection of loosely coupled services, each responsible for a specific business function.
+
+Key principles:
+1. Single Responsibility
+2. Independence
+3. Loose Coupling
+4. Fault Tolerance
+5. Autonomous data management
+
+Advantages:
+1. Scalability
+2. Fault Tolerance
+3. Flexibility
+4. Faster Development
+5. Better Maintainability
+6. Deployment Flexibility
+7. Technology Flexibility
+
+Use case:
+1. Large scale application 
+2. When different teams work on different modules
+3. If system need to integrate with multiple third parties services
+4. When high availability and fault tolerance are critical
+
+Challenges:
+1. Complexity - More services need more n=more dependencies
+2. Network latency - More API calls increase network overhead
+3. Data Consistency - Managing distributed transaction is challenging 
+4. Security - More endpoints mean a larger attack surface
+
+
+-----------------                    -----------------
+|               |                    |               |
+| MicroService 1| <----------------->| MicroService 2|             [ Each Application is a
+|               |                    |               |              sperate entity ]
+-----------------                    -----------------
+             \                        /
+              \                      /
+               \                    / (Rest APIs)
+                \________________  /
+                |                |
+                | MicroService 3 |
+                |                |
+                ------------------

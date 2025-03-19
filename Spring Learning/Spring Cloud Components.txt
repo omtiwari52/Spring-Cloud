@@ -1,0 +1,36 @@
+Spring Cloud Components
+1. Configuration - Spring cloud config
+--> Spring Cloud config server can use git, SVN, filesystem and vault to store config
+--> Can be notified of changes and process changes in a refresh event 
+
+2. Service Discovery - bunch of microservices
+--> With the dynamic nature of any cloud native application, Depending on things like URLs can be a problematic.
+--> Allow microservices to easily discover the routes to the services it needs to use
+--> Netflix Eureka
+--> Zookeeper
+
+3. Circuit Breakers - helps protect application in case of user failures
+--> Failure are inevitable, But your user's don't need to know
+--> They can help an application function in the face of failure
+--> Netflix Hystrix
+
+4. Routing and Messaging - API requests
+--> Cloud native app will be composed of many microservices so communication will be critical
+--> Spring clod supports communication via HTTP requests or via messaging 
+--> Routing and load balancing 
+--> Netflix ribbon and Open Feign
+--> RabbitMQ
+
+5. API Gateway - Use of public API and route requests
+--> API gateway allows you to route API requests to the correct service
+--> Netflix Zuul
+--> Spring Cloud Gateway
+
+6. Tracing - Helps in tracing the problem
+--> A single request to get data from your application may result in an exponentially larges number of requests to various microservices
+--> Tracing these requests through the application is critical when debugging issues
+--> Spring cloud Sleuth and Zipkin
+
+7. CI Pipelines and Testing - Deployment and testing
+--> Building, Testing and Deploying the various services is critical to having a successful cloud native application
+--> Spring cloud pipelines is an opinionated pipeline for Jenkins or concourse that will automatically create pipelines for your apps

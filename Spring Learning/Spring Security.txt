@@ -1,0 +1,69 @@
+Spring Security
+Spring Security is used to secure REST APIs by implementing authentication and authorization.
+
+--------------------------------------------------
+
+Why Spring Security -
+1. Handles Common vulnerabilities
+Like - a) Session fixation
+       b) Clickjacking
+       c) Click site request forgery
+2. Widely Adapted and because of that vulnerabilities get the most attention and quick responses
+
+----------------------------------------------------
+
+What Spring Security can do
+1. Username / Password authentication
+2. SSO / Okta / LDAP - Sign on steps
+3. App level authorization
+4. Intra App authorization like OAuth
+5. Microservice security (Using tokens, JWT)
+6. Method level security
+
+-------------------------------------------
+
+Core concepts in spring security
+1. Authentication (Who are u)
+2. Authorization
+3. Principal
+4. Granted Authority
+5. Roles
+
+-------------------------------------------------
+               Authentication
+
+--> Who are u
+Basically use of some ID and Password to login
+1. Knowledge Based Authentication
+can be a) Password
+       b) Pincode
+       c) Answer to secret/ personal question
+
+2. Possession Based Authentication
+can be  a) Phone/ Text messages (OTP)
+	b) Key cards and badges
+	c) Access Token device
+
+   -------------------------------------------
+    		Authorization
+
+1. Giving a user access to what they can do and what not
+2.Are they allowed to do this
+
+   --------------------------------------------
+		Principal
+
+Currently logged in user (Remembers which user is logged in and when they cam back they got their selves as logged in)
+
+    ------------------------------------------
+             	Granted Authority
+
+--> How does authorization happen
+--> Fine grained permission
+1. User can only do the task if he has granted authority to do so
+
+     -----------------------------------------
+		Roles
+
+--> Course grained permission
+To make a group of authorities so that it can be easy to assign authority to users
