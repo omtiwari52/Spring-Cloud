@@ -1,0 +1,34 @@
+server:
+  port: 8765
+
+spring:
+  application:
+    name: api-gateway
+
+  main:
+    web-application-type: reactive  # Ensure Reactive Web Application Type
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/**
+        - id: contact-service
+          uri: lb://CONTACT-SERVICE
+          predicates:
+            - Path=/contact/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # To expose all Actuator endpoints (optional)
+  endpoint:
+    gateway:
+    enabled: true
