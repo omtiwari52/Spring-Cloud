@@ -1,0 +1,23 @@
+Hystrix
+1. This library is developed by Netflix that is used in spring cloud to handle failures in a distributed system.
+2. It is a latency and fault tolerance library.
+3. Helps in preventing cascading failures and provide fallback mechanisms when a service call fails.
+4. It can be used in situations where your application depends on remote services
+5. Provide callback methods
+
+Key features -
+1. Circuit Breaker
+2. Timeout Handling
+3. Fallback Mechanism
+4. Bulkhead Pattern
+5. Monitoring & Metrics
+
+Hystrix Dashboard
+1. Allows you to monitor Hystrix metric in real time
+
+We have to use annotation 
+@EnableHystrix in project in which we will use hystrix
+@EnableHystrixDashboard in hystrix service
+Also add dependencies
+
+But from Spring 3.0 hystrix is no longer in use and instead of it we use Resilience4j for circuit breaker and more.
