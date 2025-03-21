@@ -26,8 +26,8 @@ public class StudentController {
     }
 
     @GetMapping("/csrf-token")
-    public CsrfToken getCsrfToken(CsrfToken csrfToken){
-        return csrfToken;
+    public CsrfToken csrf(HttpServletRequest request, CsrfToken token) {
+        return token;
     }
 
     @PostMapping("/students")
