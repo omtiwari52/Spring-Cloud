@@ -67,3 +67,33 @@ Currently logged in user (Remembers which user is logged in and when they cam ba
 
 --> Course grained permission
 To make a group of authorities so that it can be easy to assign authority to users
+
+
+OWASP---
+
+------------------------------------------------------------------------------------
+
+Filter Chaining:
+The Filter Chain in Spring Security is a sequence of filters that process incoming HTTP requests before they reach the controller. Each filter in the chain can authenticate, authorize, or modify the request/response.
+
+WorkFlow of filter chaining:
+A request comes in (e.g., GET /api/users).
+The filter chain processes the request in order:
+Authentication Filter → Checks if the user is logged in.
+Authorization Filter → Ensures the user has access to the resource.
+Custom Filters → E.g., JWT Token validation, logging, CORS, etc.
+If all filters pass, the request reaches the controller.
+The response goes through the filter chain again (if needed).
+
+Some most used filters:
+UsernamePasswordAuthenticationFilter	Handles login with username & password.
+BasicAuthenticationFilter	Supports HTTP Basic authentication.
+BearerTokenAuthenticationFilter	Supports JWT token authentication.
+SecurityContextPersistenceFilter	Stores authentication details in SecurityContextHolder.
+CsrfFilter	Prevents CSRF attacks.
+CorsFilter	Manages Cross-Origin Resource Sharing (CORS).
+LogoutFilter	Handles user logout.
+ExceptionTranslationFilter	Converts security exceptions into HTTP responses.
+
+
+CSRF - Cross site request Forgery

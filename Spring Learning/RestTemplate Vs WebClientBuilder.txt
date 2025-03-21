@@ -1,0 +1,26 @@
+RestTemplate Vs WebClientBuilder
+
+both are used for making HTTP requests in spring, but they have different use case and capabilities
+
+RestTemplate:
+1. RestTemplate is used when we don't have to create a large project and have to work on small project using MVC
+2. RestTemplate in also blocking i.e it's not good for the through-put of the application
+3. RestTemplate is Synchronous 
+4. It's Less Efficient 
+5. Simple, Traditional REST call
+
+WebClientBuilder:
+1. This is used when we have to create a large full working spring project
+2. Also non-blocking which is eventually good for the through-put of the application
+3. It's asynchronous
+4. More Efficient
+5. Suggested by Spring to use this
+6. Use when have to build high-performance or reactive application
+7. Have more features
+exam - Movie movie = webClientBuilder.build()
+//                    .get()
+//                    .uri("http://localhost:9002/info/"+ rating.getmovieId())
+//                    .retrieve()
+//                    .bodyToMono(Movie.class)//a promise that one will get an object back but do not know when
+//                    .block();
+
